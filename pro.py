@@ -45,3 +45,5 @@ print(df.nlargest(10, "PurchaseAmount"))
 print(df.groupby("CustomerSegment")["PurchaseAmount"].mean())
 print(df['City'].value_counts())
 print(df["Churn"].mean() * 100)
+print(df[["Age", "TotalOrders", "PurchaseAmount"]].corr())
+
