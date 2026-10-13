@@ -1,6 +1,8 @@
 import pandas as pd
 import numpy as np
 from faker import Faker
+import seaborn as sns
+import matplotlib.pyplot as plt
 import random
 
 fake = Faker()
@@ -46,4 +48,5 @@ print(df.groupby("CustomerSegment")["PurchaseAmount"].mean())
 print(df['City'].value_counts())
 print(df["Churn"].mean() * 100)
 print(df[["Age", "TotalOrders", "PurchaseAmount"]].corr())
-
+sns.histplot(df["Age"], bins=20, kde=True)
+plt.show()
